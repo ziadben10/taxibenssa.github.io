@@ -13,67 +13,53 @@
   <link rel="alternate" hreflang="en" href="https://www.taxibenssa.nl/en" />
   <link rel="alternate" hreflang="x-default" href="https://www.taxibenssa.nl/" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (let op /public/) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.taxibenssa.nl/" />
   <meta property="og:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta property="og:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta property="og:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
+  <meta property="og:image" content="https://www.taxibenssa.nl/public/TAXIBEN.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta name="twitter:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta name="twitter:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
+  <meta name="twitter:image" content="https://www.taxibenssa.nl/public/TAXIBEN.jpeg" />
 
-  <!-- Preload hero (laat staan, maar zorg dat het bestand écht bestaat in /public) -->
-  <link rel="preload" as="image" href="/TAXIBEN.jpeg" fetchpriority="high">
+  <!-- Preload hero (pad met /public/) -->
+  <link rel="preload" as="image" href="/public/TAXIBEN.jpeg" fetchpriority="high">
 
-  <!-- Icons / manifest -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/manifest.webmanifest" />
+  <!-- Icons / manifest (allemaal in /public/) -->
+  <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/public/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png" />
+  <link rel="manifest" href="/public/manifest.webmanifest" />
   <meta name="theme-color" content="#111827" />
 
   <style>
     :root{ --brand:#25d366; --text:#0f1115; --muted:#5a6170; --soft:#f3f5f7; --card:#ffffff; --border:#e6e8eb; --focus:#0070f3; --fontSize:18px; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{
-      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      color:var(--text); background:#fff; line-height:1.75; scroll-behavior:smooth; font-size:var(--fontSize);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
+    body{ font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:var(--text); background:#fff; line-height:1.75; scroll-behavior:smooth; font-size:var(--fontSize); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
     a{color:inherit} img{max-width:100%;height:auto}
     :focus{outline:3px solid var(--focus); outline-offset:2px}
     :focus:not(:focus-visible){outline:none}
 
-    .skip-link{ position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus{ position:static; width:auto; height:auto; padding:8px 12px; background:#fff; border:2px solid #000; }
+    .skip-link{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;}
+    .skip-link:focus{position:static; width:auto; height:auto; padding:8px 12px; background:#fff; border:2px solid #000;}
 
-    .lang{
-      position:fixed; top:14px; right:14px; z-index:60;
-      background:rgba(255,255,255,.95); backdrop-filter:blur(6px);
-      border:1px solid var(--border); border-radius:999px; padding:6px 10px; display:flex; gap:8px; align-items:center;
-      font-size:.95rem;
-    }
+    .lang{ position:fixed; top:14px; right:14px; z-index:60; background:rgba(255,255,255,.95); backdrop-filter:blur(6px); border:1px solid var(--border); border-radius:999px; padding:6px 10px; display:flex; gap:8px; align-items:center; font-size:.95rem; }
     .lang button{background:none;border:1px solid transparent;padding:8px 12px;border-radius:999px;cursor:pointer}
     .lang button.active{background:#111;color:#fff;border-color:#111}
 
     /* HERO met jouw foto + overlay voor leesbaarheid */
     .hero{
       min-height:78vh; display:grid; place-items:center; text-align:center; color:#fff; position:relative; overflow:hidden;
-      background-image:url('/TAXIBEN.jpeg'); background-size:cover; background-position:center;
+      background-image:url('/public/TAXIBEN.jpeg'); background-size:cover; background-position:center;
     }
     .hero::before{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.35) 40%, rgba(17,24,39,.15)); }
     .hero .inner{ position:relative; z-index:1; padding:0 20px }
     .hero h1{ font-size: clamp(2.3rem, 5vw, 3.3rem); margin:0 0 .5rem }
     .hero .tag{ font-size: clamp(1.05rem, 2.2vw, 1.3rem); margin:0 0 1.2rem }
-
-    .btn-wa{
-      display:inline-block; background:var(--brand); color:#0b0d11; text-decoration:none;
-      padding:1rem 1.6rem; border-radius:.8rem; font-weight:800; box-shadow:0 8px 22px rgba(37,211,102,.35);
-      border:2px solid transparent; font-size:1.05rem;
-    }
+    .btn-wa{ display:inline-block; background:var(--brand); color:#0b0d11; text-decoration:none; padding:1rem 1.6rem; border-radius:.8rem; font-weight:800; box-shadow:0 8px 22px rgba(37,211,102,.35); border:2px solid transparent; font-size:1.05rem; }
     .btn-wa:hover{ filter:brightness(.96) }
 
     .section{ padding:70px 20px; max-width:1100px; margin:0 auto }
@@ -230,24 +216,24 @@
 
   <footer role="contentinfo">© <span id="yr"></span> Taxi BenSsa — Zuid-Holland</footer>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD (paden met /public/) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    "name": "Taxi BenSsa",
-    "url": "https://www.taxibenssa.nl",
-    "logo": "https://www.taxibenssa.nl/favicon.svg",
-    "image": "https://www.taxibenssa.nl/TAXIBEN.jpeg",
-    "telephone": "+31643636957",
-    "areaServed": [
+    "@context":"https://schema.org",
+    "@type":"TaxiService",
+    "name":"Taxi BenSsa",
+    "url":"https://www.taxibenssa.nl",
+    "logo":"https://www.taxibenssa.nl/public/favicon.svg",
+    "image":"https://www.taxibenssa.nl/public/TAXIBEN.jpeg",
+    "telephone":"+31643636957",
+    "areaServed":[
       {"@type":"City","name":"Maassluis"},
       {"@type":"City","name":"Vlaardingen"},
       {"@type":"City","name":"Rotterdam"},
       {"@type":"AdministrativeArea","name":"Zuid-Holland"}
     ],
-    "priceRange": "€€",
-    "openingHoursSpecification": [{
+    "priceRange":"€€",
+    "openingHoursSpecification":[{
       "@type":"OpeningHoursSpecification",
       "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens":"00:00","closes":"23:59"
@@ -256,184 +242,132 @@
   </script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    // Jaar (veilig)
-    var yrEl = document.getElementById('yr');
-    if (yrEl) yrEl.textContent = new Date().getFullYear();
+  // Jaar
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Scroll-to-top (veilig)
-    var topBtn = document.getElementById('topBtn');
-    if (topBtn){
-      window.addEventListener('scroll', function(){
-        topBtn.style.display = window.scrollY>320 ? 'grid':'none';
-      });
-      topBtn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-    }
+  // Scroll-to-top
+  (function(){
+    const topBtn=document.getElementById('topBtn');
+    if(!topBtn) return;
+    window.addEventListener('scroll',()=>{ topBtn.style.display = window.scrollY>320 ? 'grid':'none'; });
+    topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  })();
 
-    // i18n data
-    var T = {
-      nl:{ lang:'Taal:',h1:'Taxi BenSsa',tag:'Altijd snel. Altijd beschikbaar in Zuid-Holland.',
-        cta:'📱 Boek via WhatsApp',
-        areas:'Dagelijks actief in Maassluis, Vlaardingen, Rotterdam en heel Zuid-Holland.',
-        why:'Waarom Taxi BenSsa?',
-        usps:['⏰ Altijd op tijd – we staan voor je klaar','🚗 Comfortabele ritten – schone auto’s & vriendelijke chauffeurs','💳 Flexibel betalen – Tikkie of contant','🌍 Regio: Maassluis, Vlaardingen, Rotterdam','✈️ Luchthavens: Schiphol, Rotterdam Airport, Düsseldorf'],
-        est:'Ritprijs inschatten', km:'Kilometers', night:'Nachttoeslag (22:00–06:00)', total:'Geschatte prijs', note:'Indicatief • exacte prijs via WhatsApp',
-        book:'Boeken via WhatsApp', pickup:'Ophaaladres', drop:'Bestemming', date:'Datum', time:'Tijd', pax:'Personen', bookBtn:'Boek via WhatsApp',
-        reviews:'Reviews', faq:'Veelgestelde vragen', contact:'Contact', contactp:'WhatsApp heeft de voorkeur. Liever bellen? Stuur je nummer mee; wij bellen terug.',
-        waMsg:function(p1,p2,d,t,p){ return "Boeking Taxi BenSsa:\n- Ophaaladres: "+p1+"\n- Bestemming: "+p2+"\n- Datum: "+(d||"-")+"\n- Tijd: "+(t||"-")+"\n- Personen: "+(p||1)+"\n(Verstuurd via website)"; }
-      },
-      en:{ lang:'Language:',h1:'Taxi BenSsa',tag:'Always fast. Always available in South Holland.',
-        cta:'📱 Book via WhatsApp',
-        areas:'Active in Maassluis, Vlaardingen, Rotterdam and South Holland.',
-        why:'Why Taxi BenSsa?',
-        usps:['⏰ Always on time – ready when you are','🚗 Comfortable rides – clean cars & friendly drivers','💳 Flexible payment – Tikkie or cash','🌍 Area: Maassluis, Vlaardingen, Rotterdam','✈️ Airports: Schiphol, Rotterdam Airport, Düsseldorf'],
-        est:'Estimate your fare', km:'Kilometers', night:'Night surcharge (22:00–06:00)', total:'Estimated price', note:'Indicative • get exact price on WhatsApp',
-        book:'Book via WhatsApp', pickup:'Pickup address', drop:'Destination', date:'Date', time:'Time', pax:'Passengers', bookBtn:'Send to WhatsApp',
-        reviews:'Reviews', faq:'Frequently asked questions', contact:'Contact', contactp:'WhatsApp preferred. Prefer a call? Leave your number and we will call you back.',
-        waMsg:function(p1,p2,d,t,p){ return "Booking Taxi BenSsa:\n- Pickup: "+p1+"\n- Destination: "+p2+"\n- Date: "+(d||"-")+"\n- Time: "+(t||"-")+"\n- Passengers: "+(p||1)+"\n(Sent via website)"; }
-      }
-    };
+  // i18n
+  let lang='nl';
+  const T={
+    nl:{ lang:'Taal:',h1:'Taxi BenSsa',tag:'Altijd snel. Altijd beschikbaar in Zuid-Holland.',
+      cta:'📱 Boek via WhatsApp', areas:'Dagelijks actief in Maassluis, Vlaardingen, Rotterdam en heel Zuid-Holland.',
+      why:'Waarom Taxi BenSsa?', usps:['⏰ Altijd op tijd – we staan voor je klaar','🚗 Comfortabele ritten – schone auto’s & vriendelijke chauffeurs','💳 Flexibel betalen – Tikkie of contant','🌍 Regio: Maassluis, Vlaardingen, Rotterdam','✈️ Luchthavens: Schiphol, Rotterdam Airport, Düsseldorf'],
+      est:'Ritprijs inschatten', km:'Kilometers', night:'Nachttoeslag (22:00–06:00)', total:'Geschatte prijs', note:'Indicatief • exacte prijs via WhatsApp',
+      book:'Boeken via WhatsApp', pickup:'Ophaaladres', drop:'Bestemming', date:'Datum', time:'Tijd', pax:'Personen', bookBtn:'Boek via WhatsApp',
+      reviews:'Reviews', faq:'Veelgestelde vragen', contact:'Contact', contactp:'WhatsApp heeft de voorkeur. Liever bellen? Stuur je nummer mee; wij bellen terug.',
+      waMsg:(p1,p2,d,t,p)=>`Boeking Taxi BenSsa:
+- Ophaaladres: ${p1}
+- Bestemming: ${p2}
+- Datum: ${d || '-'}
+- Tijd: ${t || '-'}
+- Personen: ${p || 1}
+(Verstuurd via website)`}
+    ,
+    en:{ lang:'Language:',h1:'Taxi BenSsa',tag:'Always fast. Always available in South Holland.',
+      cta:'📱 Book via WhatsApp', areas:'Active in Maassluis, Vlaardingen, Rotterdam and South Holland.',
+      why:'Why Taxi BenSsa?', usps:['⏰ Always on time – ready when you are','🚗 Comfortable rides – clean cars & friendly drivers','💳 Flexible payment – Tikkie or cash','🌍 Area: Maassluis, Vlaardingen, Rotterdam','✈️ Airports: Schiphol, Rotterdam Airport, Düsseldorf'],
+      est:'Estimate your fare', km:'Kilometers', night:'Night surcharge (22:00–06:00)', total:'Estimated price', note:'Indicative • get exact price on WhatsApp',
+      book:'Book via WhatsApp', pickup:'Pickup address', drop:'Destination', date:'Date', time:'Time', pax:'Passengers', bookBtn:'Send to WhatsApp',
+      reviews:'Reviews', faq:'Frequently asked questions', contact:'Contact', contactp:'WhatsApp preferred. Prefer a call? Leave your number and we will call you back.',
+      waMsg:(p1,p2,d,t,p)=>`Booking Taxi BenSsa:
+- Pickup: ${p1}
+- Destination: ${p2}
+- Date: ${d || '-'}
+- Time: ${t || '-'}
+- Passengers: ${p || 1}
+(Sent via website)`}
+  };
 
-    var lang = 'nl';
-    var btnNL = document.getElementById('btnNL');
-    var btnEN = document.getElementById('btnEN');
-
-    function applyLang(l){
-      lang = l;
-      var L = T[l];
-      var ids = [
-        ['t-lang','lang'],['t-h1','h1'],['t-tag','tag'],['t-cta','cta'],['t-areas','areas'],
-        ['t-why','why'],['t-est','est'],['t-km','km'],['t-night','night'],['t-total','total'],
-        ['noteEst','note'],['t-book','book'],['t-pickup','pickup'],['t-drop','drop'],
-        ['t-date','date'],['t-time','time'],['t-pax','pax'],['t-reviews','reviews'],
-        ['t-faq','faq'],['t-contact','contact'],['t-contactp','contactp']
-      ];
-      ids.forEach(function(pair){
-        var el=document.getElementById(pair[0]);
-        if(el){ el.textContent = L[pair[1]]; }
-      });
-
-      // USP
-      var ul=document.getElementById('usp');
-      if(ul){
-        ul.innerHTML='';
-        (L.usps||[]).forEach(function(x){
-          var li=document.createElement('li'); li.textContent=x; ul.appendChild(li);
-        });
-      }
-
-      // FAQ render
-      renderFAQ(l);
-
-      // WA link updaten
-      linkWA();
-
-      // buttons states
-      if(btnNL && btnEN){
-        btnNL.classList.toggle('active', l==='nl');
-        btnEN.classList.toggle('active', l==='en');
-        btnNL.setAttribute('aria-pressed', l==='nl');
-        btnEN.setAttribute('aria-pressed', l==='en');
-      }
-
-      document.title = 'Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam | 24/7 WhatsApp';
-    }
-
-    if(btnNL) btnNL.onclick=function(){ applyLang('nl'); };
-    if(btnEN) btnEN.onclick=function(){ applyLang('en'); };
-    applyLang('nl'); // init
-
-    // Estimator
-    var kmInput=document.getElementById('km');
-    var night=document.getElementById('night');
-    var priceEl=document.getElementById('price');
-    function calc(){
-      if(!priceEl){ return; }
-      var base=8, perKm=2, nightFee=5;
-      var km=parseFloat((kmInput && kmInput.value) || 0);
-      var total=Math.max(0, base+km*perKm+((night && night.checked)?nightFee:0));
-      priceEl.textContent='€ '+total.toFixed(2);
-    }
-    if(kmInput) kmInput.addEventListener('input',calc);
-    if(night) night.addEventListener('change',calc);
-    calc();
-
-    // WhatsApp deeplink
-    function linkWA(){
-      var bookBtn=document.getElementById('bookBtn');
-      if(!bookBtn){ return; }
-      var L=T[lang];
-      var pickupEl=document.getElementById('pickup');
-      var dropEl=document.getElementById('drop');
-      var dateEl=document.getElementById('date');
-      var timeEl=document.getElementById('time');
-      var paxEl=document.getElementById('pax');
-      var wa='https://wa.me/31643636957?text='+encodeURIComponent(
-        L.waMsg(
-          (pickupEl && pickupEl.value ? pickupEl.value.trim() : ''),
-          (dropEl && dropEl.value ? dropEl.value.trim() : ''),
-          (dateEl && dateEl.value) || '',
-          (timeEl && timeEl.value) || '',
-          (paxEl && paxEl.value) || 1
-        )
-      );
-      bookBtn.href=wa;
-    }
-    ['pickup','drop','date','time','pax'].forEach(function(id){
-      var el=document.getElementById(id);
-      if(el) el.addEventListener('input',linkWA);
+  function renderFAQ(langKey){
+    const faq = document.getElementById('faqList');
+    if(!faq) return;
+    faq.innerHTML = '';
+    const items = (langKey==='nl'
+      ? [{q:'Rijden jullie 24/7?',a:'Ja, we zijn 24/7 beschikbaar. WhatsApp is de snelste manier om te boeken.'},
+         {q:'Kan ik met Tikkie betalen?',a:'Ja, Tikkie of contant – wat jij wilt.'},
+         {q:'Doen jullie luchthavenvervoer?',a:'Zeker. Schiphol, Rotterdam Airport, Düsseldorf en meer.'}]
+      : [{q:'Are you available 24/7?',a:'Yes. WhatsApp is the fastest way to book.'},
+         {q:'Can I pay by Tikkie?',a:'Yes. Tikkie or cash – up to you.'},
+         {q:'Do you offer airport rides?',a:'Absolutely. Schiphol, Rotterdam Airport, Düsseldorf and more.'}]
+    );
+    items.forEach(({q,a})=>{
+      const d=document.createElement('details'); d.setAttribute('role','listitem');
+      const s=document.createElement('summary'); s.innerHTML=`<span>${q}</span><span class="caret">▶</span>`;
+      const p=document.createElement('div'); p.className='answer'; p.textContent=a;
+      d.appendChild(s); d.appendChild(p); faq.appendChild(d);
     });
-    linkWA();
+    faq.addEventListener('toggle', (e)=>{
+      if(e.target.tagName!=='DETAILS' || !e.target.open) return;
+      [...faq.querySelectorAll('details')].forEach(el=>{ if(el!==e.target) el.removeAttribute('open'); });
+    });
+  }
 
-    // FAQ render (met blijvende "één tegelijk" logica)
-    function renderFAQ(langKey){
-      var faq = document.getElementById('faqList');
-      if(!faq){ return; }
-      faq.innerHTML = '';
-      var items = (langKey==='nl'
-        ? [
-            {q:'Rijden jullie 24/7?',a:'Ja, we zijn 24/7 beschikbaar. WhatsApp is de snelste manier om te boeken.'},
-            {q:'Kan ik met Tikkie betalen?',a:'Ja, Tikkie of contant – wat jij wilt.'},
-            {q:'Doen jullie luchthavenvervoer?',a:'Zeker. Schiphol, Rotterdam Airport, Düsseldorf en meer.'}
-          ]
-        : [
-            {q:'Are you available 24/7?',a:'Yes. WhatsApp is the fastest way to book.'},
-            {q:'Can I pay by Tikkie?',a:'Yes. Tikkie or cash – up to you.'},
-            {q:'Do you offer airport rides?',a:'Absolutely. Schiphol, Rotterdam Airport, Düsseldorf and more.'}
-          ]);
-      items.forEach(function(item){
-        var d=document.createElement('details');
-        d.setAttribute('role','listitem');
-        var s=document.createElement('summary');
-        s.innerHTML='<span>'+item.q+'</span><span class="caret">▶</span>';
-        var p=document.createElement('div'); p.className='answer'; p.textContent=item.a;
-        d.appendChild(s); d.appendChild(p); faq.appendChild(d);
-      });
-      // event 1x binden, maar géén once:true — blijft werken
-      faq.addEventListener('toggle', function(e){
-        if(e.target.tagName!=='DETAILS' || !e.target.open) return;
-        Array.prototype.forEach.call(faq.querySelectorAll('details'), function(el){
-          if(el!==e.target) el.removeAttribute('open');
-        });
-      });
-    }
+  function applyLang(l){
+    lang=l;
+    const L=T[l];
+    const map=[['t-lang','lang'],['t-h1','h1'],['t-tag','tag'],['t-cta','cta'],['t-areas','areas'],['t-why','why'],['t-est','est'],['t-km','km'],['t-night','night'],['t-total','total'],['noteEst','note'],['t-book','book'],['t-pickup','pickup'],['t-drop','drop'],['t-date','date'],['t-time','time'],['t-pax','pax'],['t-reviews','reviews'],['t-faq','faq'],['t-contact','contact'],['t-contactp','contactp']];
+    map.forEach(([id,key])=>{ const el=document.getElementById(id); if(el) el.textContent=L[key]; });
 
-    // Reveal animaties met fallback
-    function revealNow(){
-      var els=document.querySelectorAll('.reveal');
-      for(var i=0;i<els.length;i++){ els[i].classList.add('in'); }
-    }
-    if('IntersectionObserver' in window){
-      var io=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-      },{threshold:.15});
-      var rs=document.querySelectorAll('.reveal');
-      for(var j=0;j<rs.length;j++){ io.observe(rs[j]); }
-    } else {
-      // oudere browser: meteen tonen
-      revealNow();
-    }
-  });
+    const ul=document.getElementById('usp');
+    if(ul){ ul.innerHTML=''; (L.usps||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; ul.appendChild(li); }); }
+
+    renderFAQ(l); linkWA();
+
+    const btnNL=document.getElementById('btnNL'); const btnEN=document.getElementById('btnEN');
+    if(btnNL&&btnEN){ btnNL.classList.toggle('active', l==='nl'); btnEN.classList.toggle('active', l==='en'); btnNL.setAttribute('aria-pressed', l==='nl'); btnEN.setAttribute('aria-pressed', l==='en'); }
+
+    document.title = 'Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam | 24/7 WhatsApp';
+  }
+
+  document.getElementById('btnNL').onclick=()=>applyLang('nl');
+  document.getElementById('btnEN').onclick=()=>applyLang('en');
+  applyLang('nl');
+
+  // Estimator
+  const kmInput=document.getElementById('km');
+  const night=document.getElementById('night');
+  const priceEl=document.getElementById('price');
+  function calc(){
+    if(!priceEl) return;
+    const base=8, perKm=2, nightFee=5;
+    const km=parseFloat(kmInput?.value||0);
+    const total=Math.max(0, base+km*perKm+(night?.checked?nightFee:0));
+    priceEl.textContent='€ '+total.toFixed(2);
+  }
+  kmInput?.addEventListener('input',calc);
+  night?.addEventListener('change',calc);
+  calc();
+
+  // WhatsApp deeplink
+  function linkWA(){
+    const bookBtn=document.getElementById('bookBtn'); if(!bookBtn) return;
+    const L=T[lang];
+    const wa='https://wa.me/31643636957?text='+encodeURIComponent(L.waMsg(
+      (document.getElementById('pickup')?.value||'').trim(),
+      (document.getElementById('drop')?.value||'').trim(),
+      document.getElementById('date')?.value||'',
+      document.getElementById('time')?.value||'',
+      document.getElementById('pax')?.value||1
+    ));
+    bookBtn.href=wa;
+  }
+  ['pickup','drop','date','time','pax'].forEach(id=>document.getElementById(id)?.addEventListener('input',linkWA));
+  linkWA();
+
+  // Reveal animaties
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }else{
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
   </script>
 </body>
 </html>
