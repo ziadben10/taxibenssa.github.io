@@ -13,53 +13,77 @@
   <link rel="alternate" hreflang="en" href="https://www.taxibenssa.nl/en" />
   <link rel="alternate" hreflang="x-default" href="https://www.taxibenssa.nl/" />
 
-  <!-- Open Graph / Twitter (let op /public/) -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.taxibenssa.nl/" />
   <meta property="og:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta property="og:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta property="og:image" content="https://www.taxibenssa.nl/public/TAXIBEN.jpeg" />
+  <meta property="og:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta name="twitter:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta name="twitter:image" content="https://www.taxibenssa.nl/public/TAXIBEN.jpeg" />
+  <meta name="twitter:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
 
-  <!-- Preload hero (pad met /public/) -->
-  <link rel="preload" as="image" href="/public/TAXIBEN.jpeg" fetchpriority="high">
+  <!-- Preload hero voor LCP -->
+  <link rel="preload" as="image" href="/TAXIBEN.jpeg" fetchpriority="high">
 
-  <!-- Icons / manifest (allemaal in /public/) -->
-  <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/public/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png" />
-  <link rel="manifest" href="/public/manifest.webmanifest" />
+  <!-- Icons / manifest (alles staat in /public, paden ZONDER /public) -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#111827" />
 
   <style>
-    :root{ --brand:#25d366; --text:#0f1115; --muted:#5a6170; --soft:#f3f5f7; --card:#ffffff; --border:#e6e8eb; --focus:#0070f3; --fontSize:18px; }
+    :root{
+      --brand:#25d366; --text:#0f1115; --muted:#5a6170; --soft:#f3f5f7; --card:#ffffff; --border:#e6e8eb;
+      --focus:#0070f3; --fontSize:18px;
+    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{ font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:var(--text); background:#fff; line-height:1.75; scroll-behavior:smooth; font-size:var(--fontSize); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body{
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color:var(--text); background:#fff; line-height:1.75; scroll-behavior:smooth; font-size:var(--fontSize);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
     a{color:inherit} img{max-width:100%;height:auto}
     :focus{outline:3px solid var(--focus); outline-offset:2px}
     :focus:not(:focus-visible){outline:none}
 
     .skip-link{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;}
-    .skip-link:focus{position:static; width:auto; height:auto; padding:8px 12px; background:#fff; border:2px solid #000;}
+    .skip-link:focus{ position:static; width:auto; height:auto; padding:8px 12px; background:#fff; border:2px solid #000; }
 
-    .lang{ position:fixed; top:14px; right:14px; z-index:60; background:rgba(255,255,255,.95); backdrop-filter:blur(6px); border:1px solid var(--border); border-radius:999px; padding:6px 10px; display:flex; gap:8px; align-items:center; font-size:.95rem; }
+    .lang{
+      position:fixed; top:14px; right:14px; z-index:60;
+      background:rgba(255,255,255,.95); backdrop-filter:blur(6px);
+      border:1px solid var(--border); border-radius:999px; padding:6px 10px; display:flex; gap:8px; align-items:center;
+      font-size:.95rem;
+    }
     .lang button{background:none;border:1px solid transparent;padding:8px 12px;border-radius:999px;cursor:pointer}
     .lang button.active{background:#111;color:#fff;border-color:#111}
 
-    /* HERO met jouw foto + overlay voor leesbaarheid */
+    /* HERO met jouw foto + overlay; image-set fallback webp/jpeg/jpg */
     .hero{
       min-height:78vh; display:grid; place-items:center; text-align:center; color:#fff; position:relative; overflow:hidden;
-      background-image:url('/public/TAXIBEN.jpeg'); background-size:cover; background-position:center;
+      background-image: image-set(
+        url('/TAXIBEN.webp') type("image/webp") 1x,
+        url('/TAXIBEN.jpeg') type("image/jpeg") 1x,
+        url('/TAXIBEN.jpg') type("image/jpeg") 1x
+      );
+      background-size:cover; background-position:center;
     }
-    .hero::before{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.35) 40%, rgba(17,24,39,.15)); }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.35) 40%, rgba(17,24,39,.15));
+    }
     .hero .inner{ position:relative; z-index:1; padding:0 20px }
     .hero h1{ font-size: clamp(2.3rem, 5vw, 3.3rem); margin:0 0 .5rem }
     .hero .tag{ font-size: clamp(1.05rem, 2.2vw, 1.3rem); margin:0 0 1.2rem }
-    .btn-wa{ display:inline-block; background:var(--brand); color:#0b0d11; text-decoration:none; padding:1rem 1.6rem; border-radius:.8rem; font-weight:800; box-shadow:0 8px 22px rgba(37,211,102,.35); border:2px solid transparent; font-size:1.05rem; }
+    .btn-wa{
+      display:inline-block; background:var(--brand); color:#0b0d11; text-decoration:none;
+      padding:1rem 1.6rem; border-radius:.8rem; font-weight:800; box-shadow:0 8px 22px rgba(37,211,102,.35);
+      border:2px solid transparent; font-size:1.05rem;
+    }
     .btn-wa:hover{ filter:brightness(.96) }
 
     .section{ padding:70px 20px; max-width:1100px; margin:0 auto }
@@ -72,42 +96,78 @@
     .usp li:last-child{ border-bottom:none }
 
     .grid2{ display:grid; gap:24px }
-    .grid2 > div{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.05) }
+    .grid2 > div{
+      background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05)
+    }
     @media (min-width:900px){ .grid2{ grid-template-columns:1fr 1fr } }
 
     .form{ display:grid; gap:14px }
     .field{ display:grid; gap:8px }
     .label{ font-weight:800; font-size:1rem; display:flex; gap:10px; align-items:center }
     .label .ico{ font-size:1.2rem }
-    input, textarea, select{ width:100%; padding:1rem 1.1rem; border:2px solid var(--border); border-radius:12px; font-size:1.05rem; background:#fff; }
+    input, textarea, select{
+      width:100%; padding:1rem 1.1rem; border:2px solid var(--border); border-radius:12px; font-size:1.05rem; background:#fff;
+    }
     input:focus, textarea:focus, select:focus{ border-color:#111; outline:none }
     .row{ display:grid; gap:14px }
     @media (min-width:680px){ .row{ grid-template-columns:1fr 1fr 1fr } }
 
-    .btn{ display:inline-block; text-align:center; text-decoration:none; padding:1rem 1.2rem; border-radius:12px; color:#fff; background:#111; border:2px solid #111; font-weight:800; font-size:1.05rem; min-width:44px; min-height:48px; }
+    .btn{
+      display:inline-block; text-align:center; text-decoration:none; padding:1rem 1.2rem; border-radius:12px;
+      color:#fff; background:#111; border:2px solid #111; font-weight:800; font-size:1.05rem;
+      min-width:44px; min-height:48px;
+    }
     .btn:hover{ filter:brightness(.97) }
 
     .notice{ font-size:.95rem; color:var(--muted) }
 
     .reviews{ overflow:hidden }
     .rail{ display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:0 2px 10px }
-    .card{ flex:0 0 85%; max-width:560px; scroll-snap-align:start; background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px; box-shadow:0 12px 36px rgba(0,0,0,.06); font-size:1.05rem }
+    .card{
+      flex:0 0 85%; max-width:560px; scroll-snap-align:start;
+      background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px;
+      box-shadow:0 12px 36px rgba(0,0,0,.06); font-size:1.05rem
+    }
     .stars{ color:#ffb000; letter-spacing:2px; font-size:1.2rem; margin-bottom:8px }
     @media (min-width:900px){ .card{ flex-basis:48% } }
 
-    .faq details{ background:#fff; border:1px solid var(--border); border-radius:12px; margin:12px 0; padding:0; }
-    .faq summary{ list-style:none; cursor:pointer; padding:16px 18px; font-weight:800; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .faq details{
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      margin:12px 0; padding:0;
+    }
+    .faq summary{
+      list-style:none; cursor:pointer; padding:16px 18px; font-weight:800;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
     .faq summary::-webkit-details-marker{ display:none }
-    .faq summary .caret{ transition:transform .25s ease; font-size:1.1rem; color:#666; }
+    .faq summary .caret{
+      transition:transform .25s ease; font-size:1.1rem; color:#666;
+    }
     .faq details[open] summary .caret{ transform:rotate(90deg) }
-    .faq .answer{ padding:0 18px 16px 18px; color:var(--muted); line-height:1.7; border-top:1px solid var(--border); font-size:1rem; }
+    .faq .answer{
+      padding:0 18px 16px 18px; color:var(--muted); line-height:1.7;
+      border-top:1px solid var(--border); font-size:1rem;
+    }
 
     .cta{ display:flex; gap:12px; justify-content:center; align-items:center; margin-top:10px; flex-wrap:wrap }
-    .btn-plain{ display:inline-block; padding:1rem 1.2rem; border-radius:12px; border:2px solid var(--border); text-decoration:none; color:var(--text); font-weight:700 }
+    .btn-plain{
+      display:inline-block; padding:1rem 1.2rem; border-radius:12px; border:2px solid var(--border); text-decoration:none; color:var(--text); font-weight:700
+    }
     .btn-plain:hover{ background:#f9fafb }
 
-    .fab-wa{ position:fixed; right:18px; bottom:18px; z-index:60; width:62px; height:62px; display:grid; place-items:center; font-size:26px; background:var(--brand); color:#0b0d11; border-radius:50%; text-decoration:none; box-shadow:0 14px 34px rgba(37,211,102,.35); border:2px solid rgba(0,0,0,.05); }
-    .fab-top{ position:fixed; right:18px; bottom:96px; z-index:60; width:52px; height:52px; border:2px solid rgba(0,0,0,.05); cursor:pointer; background:#111; color:#fff; font-size:20px; border-radius:50%; box-shadow:0 10px 26px rgba(0,0,0,.25); display:none; }
+    .fab-wa{
+      position:fixed; right:18px; bottom:18px; z-index:60;
+      width:62px; height:62px; display:grid; place-items:center; font-size:26px;
+      background:var(--brand); color:#0b0d11; border-radius:50%; text-decoration:none;
+      box-shadow:0 14px 34px rgba(37,211,102,.35); border:2px solid rgba(0,0,0,.05);
+    }
+    .fab-top{
+      position:fixed; right:18px; bottom:96px; z-index:60;
+      width:52px; height:52px; border:2px solid rgba(0,0,0,.05); cursor:pointer;
+      background:#111; color:#fff; font-size:20px; border-radius:50%;
+      box-shadow:0 10px 26px rgba(0,0,0,.25); display:none;
+    }
 
     .reveal{ opacity:0; transform:translateY(18px); transition:.6s ease }
     .reveal.in{ opacity:1; transform:none }
@@ -216,15 +276,15 @@
 
   <footer role="contentinfo">© <span id="yr"></span> Taxi BenSsa — Zuid-Holland</footer>
 
-  <!-- JSON-LD (paden met /public/) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"TaxiService",
     "name":"Taxi BenSsa",
     "url":"https://www.taxibenssa.nl",
-    "logo":"https://www.taxibenssa.nl/public/favicon.svg",
-    "image":"https://www.taxibenssa.nl/public/TAXIBEN.jpeg",
+    "logo":"https://www.taxibenssa.nl/favicon.svg",
+    "image":"https://www.taxibenssa.nl/TAXIBEN.jpeg",
     "telephone":"+31643636957",
     "areaServed":[
       {"@type":"City","name":"Maassluis"},
@@ -365,10 +425,9 @@
   if('IntersectionObserver' in window){
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  }else{
+  } else {
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
   }
   </script>
 </body>
 </html>
-
