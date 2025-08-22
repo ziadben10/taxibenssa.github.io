@@ -13,25 +13,25 @@
   <link rel="alternate" hreflang="en" href="https://www.taxibenssa.nl/en" />
   <link rel="alternate" hreflang="x-default" href="https://www.taxibenssa.nl/" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter met jouw foto -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.taxibenssa.nl/" />
   <meta property="og:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta property="og:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta property="og:image" content="https://www.taxibenssa.nl/og-cover.jpg" />
-
-  <!-- Twitter -->
+  <meta property="og:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Taxi BenSsa • Taxi Maassluis, Vlaardingen & Rotterdam" />
   <meta name="twitter:description" content="Snel en betrouwbaar taxivervoer. Boek direct via WhatsApp." />
-  <meta name="twitter:image" content="https://www.taxibenssa.nl/og-cover.jpg" />
+  <meta name="twitter:image" content="https://www.taxibenssa.nl/TAXIBEN.jpeg" />
 
-  <!-- Icons -->
+  <!-- Preload hero-afbeelding voor snelle LCP -->
+  <link rel="preload" as="image" href="/TAXIBEN.jpeg" fetchpriority="high">
+
+  <!-- Icons / manifest -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
-
   <meta name="theme-color" content="#111827" />
 
   <style>
@@ -66,10 +66,14 @@
     .lang button{background:none;border:1px solid transparent;padding:8px 12px;border-radius:999px;cursor:pointer}
     .lang button.active{background:#111;color:#fff;border-color:#111}
 
-    /* HERO */
+    /* HERO met jouw foto + overlay voor leesbaarheid */
     .hero{
       min-height:78vh; display:grid; place-items:center; text-align:center; color:#fff; position:relative; overflow:hidden;
-      background: radial-gradient(60% 60% at 50% 40%, rgba(0,0,0,.45), rgba(0,0,0,.78)), #0b0d11;
+      background-image:url('/TAXIBEN.jpeg'); background-size:cover; background-position:center;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.35) 40%, rgba(17,24,39,.15));
     }
     .hero .inner{ position:relative; z-index:1; padding:0 20px }
     .hero h1{ font-size: clamp(2.3rem, 5vw, 3.3rem); margin:0 0 .5rem }
@@ -166,8 +170,9 @@
     }
     .fab-top{
       position:fixed; right:18px; bottom:96px; z-index:60;
-      width:52px; height:52px; border-radius:50%; border:2px solid rgba(0,0,0,.05); cursor:pointer;
-      background:#111; color:#fff; font-size:20px; box-shadow:0 10px 26px rgba(0,0,0,.25); display:none;
+      width:52px; height:52px; border:2px solid rgba(0,0,0,.05); cursor:pointer;
+      background:#111; color:#fff; font-size:20px; border-radius:50%;
+      box-shadow:0 10px 26px rgba(0,0,0,.25); display:none;
     }
 
     /* Reveal */
@@ -178,6 +183,8 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Direct naar inhoud</a>
+
   <!-- Language -->
   <div class="lang" aria-label="Taalkeuze">
     <span id="t-lang">Taal:</span>
@@ -288,7 +295,7 @@
 
   <footer role="contentinfo">© <span id="yr"></span> Taxi BenSsa — Zuid-Holland</footer>
 
-  <!-- JSON-LD (zonder aggregateRating zolang je geen echte reviews publiceert) -->
+  <!-- JSON-LD (feitelijk; geen aggregateRating zonder echte reviewsbron) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -296,7 +303,7 @@
     "name": "Taxi BenSsa",
     "url": "https://www.taxibenssa.nl",
     "logo": "https://www.taxibenssa.nl/favicon.svg",
-    "image": "https://www.taxibenssa.nl/og-cover.jpg",
+    "image": "https://www.taxibenssa.nl/TAXIBEN.jpeg",
     "telephone": "+31643636957",
     "areaServed": [
       {"@type":"City","name":"Maassluis"},
@@ -314,7 +321,7 @@
   </script>
 
   <script>
-    // Year
+    // Jaar
     document.getElementById('yr').textContent = new Date().getFullYear();
 
     // Reveal animations
