@@ -324,10 +324,6 @@
     // Jaar
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Reveal animations
-    const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
     // Scroll-to-top
     const topBtn=document.getElementById('topBtn');
     window.addEventListener('scroll',()=>{ topBtn.style.display = window.scrollY>320 ? 'grid':'none'; });
@@ -412,11 +408,11 @@
         d.appendChild(s); d.appendChild(p); faq.appendChild(d);
       });
 
-      // één tegelijk open
+      // één tegelijk open — listener blijft actief (GEEN once:true)
       faq.addEventListener('toggle', (e)=>{
         if(e.target.tagName!=='DETAILS' || !e.target.open) return;
         [...faq.querySelectorAll('details')].forEach(el=>{ if(el!==e.target) el.removeAttribute('open'); });
-      }, { once:true });
+      });
     }
 
     function applyLang(l){
@@ -449,10 +445,8 @@
       const ul=document.getElementById('usp'); ul.innerHTML='';
       L.usps.forEach(x=>{ const li=document.createElement('li'); li.textContent=x; ul.appendChild(li); });
 
-      // FAQ render
+      // FAQ render + WA link
       renderFAQ(l);
-
-      // WA link
       linkWA();
 
       // buttons
@@ -496,10 +490,11 @@
     ['pickup','drop','date','time','pax'].forEach(id=>document.getElementById(id).addEventListener('input',linkWA));
     linkWA();
 
-    // Reveal in-view
-    const io2=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
+    // Reveal in-view — ENKELVOUDIGE observer
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
-
